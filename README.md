@@ -20,10 +20,9 @@ Note: The example scripts are designed to be run on an ubuntu EC2 instance and m
 1. Provisition a machine on EC2 or elsewhere.
 2. Download and install [Scribe](https://github.com/facebook/scribe)
 3. Download and install [Tornado](http://www.tornadoweb.org/)
-4. git clone git@github.com:gregbayer/logcatcher.git
-5. See the Config section to setup your scribe log directory.
-5. cd logcatcher
-6. example_scripts/start_scribe_and_tornado.sh
+4. git clone git@github.com:gregbayer/logcatcher.git; cd logcatcher
+6. See the Config section to setup your scribe log directory.
+7. example_scripts/start_scribe_and_tornado.sh
 
 
 # Config
