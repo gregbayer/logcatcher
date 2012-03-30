@@ -34,14 +34,17 @@ To setup the default scribe log directory (/mnt/scribe_logs/) on an Ubuntu EC2 i
 
 These lines in the following LogCatcher files should be modified for your own specific needs.
 
-* scribe/scribe.conf
-        
-        file_path=**/mnt/scribe_logs/**
+* scribe/scribe.conf \n
+
+		file_path=**/mnt/scribe_logs/**
 
 # Other Examples
 
 * example_scripts/crontab.sh
-       
-       30 * * * * nohup /usr/bin/python <logcatcher dir>/example_scripts/move_scribe_logs_to_s3.py /mnt/scribe_logs/ <scribe_log_category> <s3_bucket> true >> <your_error_logs_dir>/move_scribe_logs_to_s3.log 2>&1
 
+		30 * * * * nohup /usr/bin/python **<logcatcher dir>**/example_scripts/move_scribe_logs_to_s3.py **/mnt/scribe_logs/** **<scribe_log_category>** **<your_s3_bucket>** true >> **<your_error_logs_dir>**/move_scribe_logs_to_s3.log 2>&1
 
+* example_scripts/move_scribe_logs_to_s3.py
+
+		AWS_ACCESS_KEY_ID = '<your_aws_key>'
+		AWS_SECRET_ACCESS_KEY = '<your_aws_secret>'
