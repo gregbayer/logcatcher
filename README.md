@@ -18,7 +18,7 @@ Since ELBs support pinging the LogCatcher's built-in heartbeat handler, the load
 Note: The example scripts are designed to be run on an ubuntu EC2 instance and may need to be modified to work in your environment.
 
 1. Provisition a machine on EC2 or elsewhere.
-2. Download & build & install [Scribe](https://github.com/facebook/scribe). You may also need to build/install Scribe dependencies like [boost](http://www.boost.org/).
+2. Download & build & install [Scribe](https://github.com/facebook/scribe). You may also need to build/install Scribe dependencies like [Boost](http://www.boost.org/) and and [Thrift](http://thrift.apache.org/download/) and FB303 (included with thrift in contrib/fb303/).
 3. Download & install [Tornado](http://www.tornadoweb.org/)
 4. git clone git@github.com:gregbayer/logcatcher.git; cd logcatcher
 6. See the Config section to setup your scribe log directory.
@@ -54,7 +54,7 @@ Strings to update:
 
 Starting LogCatcher:
 
-* start_scribe_and_tornado.sh  --- if you want to run this script from anywhere, consider making the paths absolute.
+* start_scribe_and_tornado.sh  --- if you want to run this script from other locations, consider making the paths absolute.
 
 		nohup scribed -c scribe/scribe.conf >> logs/scribe.log 2>&1 &
 		sudo nohup python tornado/catch_logs.py >> logs/tornado.log 2>&1 &
