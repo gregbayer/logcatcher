@@ -36,7 +36,7 @@ To setup the default scribe log directory on an Ubuntu EC2 instance with ELB sto
 
 Update the following line in this file if you want to use a different directory. See Other Examples for more places you'll have to update this directory if you want to use the other example scripts.
 
-* scribe/scribe.conf \n
+* scribe/scribe.conf
 
 		file_path=/mnt/scribe_logs/
 
@@ -44,7 +44,7 @@ Update the following line in this file if you want to use a different directory.
 
 Strings to update:
 
-* <logcatcher dir>  		---	Ex. /home/ubuntu/logcatcher
+* \<logcatcher dir\>  		---	Ex. /home/ubuntu/logcatcher
 * <scribe_log_directory>	---	Ex. /mnt/scribe_logs/
 * <scribe_log_category> 	---	Ex. application1
 * <your_s3_bucket>			---	Ex. my-amazon-s3-bucket
