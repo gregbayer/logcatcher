@@ -28,17 +28,20 @@ Note: The example scripts are designed to be run on an ubuntu EC2 instance and m
 # Config
 
 To setup the default scribe log directory (/mnt/scribe_logs/) on an Ubuntu EC2 instance with ELB storage, run this command.
-    sudo chown -R ubuntu /mnt
-    mkdir /mnt/scribe_logs
+
+        sudo chown -R ubuntu /mnt
+        mkdir /mnt/scribe_logs
 
 These lines in the following LogCatcher files should be modified for your own specific needs.
 
 * scribe/scribe.conf
+        
         file_path=**/mnt/scribe_logs/**
 
 # Other Examples
 
 * example_scripts/crontab.sh
+       
        30 * * * * nohup /usr/bin/python <logcatcher dir>/example_scripts/move_scribe_logs_to_s3.py /mnt/scribe_logs/ <scribe_log_category> <s3_bucket> true >> <your_error_logs_dir>/move_scribe_logs_to_s3.log 2>&1
 
 
