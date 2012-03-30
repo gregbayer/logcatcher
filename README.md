@@ -18,8 +18,8 @@ Since ELBs support pinging the LogCatcher's built-in heartbeat handler, the load
 Note: The example scripts are designed to be run on an ubuntu EC2 instance and may need to be modified to work in your environment.
 
 1. Provisition a machine on EC2 or elsewhere.
-2. Download and install [Scribe](https://github.com/facebook/scribe)
-3. Download and install [Tornado](http://www.tornadoweb.org/)
+2. Download & build & install [Scribe](https://github.com/facebook/scribe). You may also need to build/install Scribe dependencies like [boost](http://www.boost.org/).
+3. Download & install [Tornado](http://www.tornadoweb.org/)
 4. git clone git@github.com:gregbayer/logcatcher.git; cd logcatcher
 6. See the Config section to setup your scribe log directory.
 7. example_scripts/start_scribe_and_tornado.sh
@@ -27,22 +27,45 @@ Note: The example scripts are designed to be run on an ubuntu EC2 instance and m
 
 # Config
 
-To setup the default scribe log directory (/mnt/scribe_logs/) on an Ubuntu EC2 instance with ELB storage, run this command.
+The default scribe log directory is set to /mnt/scribe_logs/ in the example scripts. This is where the logs that are collected by LogCatcher will be stored. Optionally, you can use a script like example_scripts/move_scribe_logs_to_s3 to move completed log files after they roll.
+
+To setup the default scribe log directory on an Ubuntu EC2 instance with ELB storage, run these commands:
 
         sudo chown -R ubuntu /mnt
         mkdir /mnt/scribe_logs
 
-These lines in the following LogCatcher files should be modified for your own specific needs.
+Update the following line in this file if you want to use a different directory. See Other Examples for more places you'll have to update this directory if you want to use the other example scripts.
 
 * scribe/scribe.conf \n
 
-		file_path=**/mnt/scribe_logs/**
+		file_path=/mnt/scribe_logs/
 
-# Other Examples
+# Example scripts
+
+Strings to update:
+
+* <logcatcher dir>  		---	Ex. /home/ubuntu/logcatcher
+* <scribe_log_directory>	---	Ex. /mnt/scribe_logs/
+* <scribe_log_category> 	---	Ex. application1
+* <your_s3_bucket>			---	Ex. my-amazon-s3-bucket
+* <your_error_logs_dir>		---	Ex. /home/ubuntu/logcatcher/logs
+* <your_aws_key>			--- Ex. zxcabnfiuafabfkabfjka
+* <your_aws_secret>			--- Ex. dvzxc+abnfi+uafabfkasdbfjkavzd
+
+Starting LogCatcher:
+
+* start_scribe_and_tornado.sh  --- if you want to run this script from anywhere, consider making the paths absolute.
+
+		nohup scribed -c scribe/scribe.conf >> logs/scribe.log 2>&1 &
+		sudo nohup python tornado/catch_logs.py >> logs/tornado.log 2>&1 &
+
+Regularly moving logs to S3:
+
+You will need to install [boto](https://github.com/boto/boto).
 
 * example_scripts/crontab.sh
 
-		30 * * * * nohup /usr/bin/python **<logcatcher dir>**/example_scripts/move_scribe_logs_to_s3.py **/mnt/scribe_logs/** **<scribe_log_category>** **<your_s3_bucket>** true >> **<your_error_logs_dir>**/move_scribe_logs_to_s3.log 2>&1
+		30 * * * * nohup /usr/bin/python <logcatcher dir>/example_scripts/move_scribe_logs_to_s3.py <scribe_log_directory> <scribe_log_category> <your_s3_bucket> true >> <your_error_logs_dir>/move_scribe_logs_to_s3.log 2>&1
 
 * example_scripts/move_scribe_logs_to_s3.py
 
