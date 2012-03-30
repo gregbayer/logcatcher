@@ -45,12 +45,12 @@ Update the following line in this file if you want to use a different directory.
 Strings to update:
 
 * \<logcatcher dir\>  		---	Ex. /home/ubuntu/logcatcher
-* <scribe_log_directory>	---	Ex. /mnt/scribe_logs/
-* <scribe_log_category> 	---	Ex. application1
-* <your_s3_bucket>			---	Ex. my-amazon-s3-bucket
-* <your_error_logs_dir>		---	Ex. /home/ubuntu/logcatcher/logs
-* <your_aws_key>			--- Ex. zxcabnfiuafabfkabfjka
-* <your_aws_secret>			--- Ex. dvzxc+abnfi+uafabfkasdbfjkavzd
+* \<scribe_log_directory\>	---	Ex. /mnt/scribe_logs/
+* \<scribe_log_category\> 	---	Ex. application1
+* \<your_s3_bucket\>		---	Ex. my-amazon-s3-bucket
+* \<your_error_logs_dir\>	---	Ex. /home/ubuntu/logcatcher/logs
+* \<your_aws_key\>			--- Ex. zxcabnfiuafabfkabfjka
+* \<your_aws_secret\>		--- Ex. dvzxc+abnfi+uafabfkasdbfjkavzd
 
 Starting LogCatcher:
 
