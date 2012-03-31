@@ -71,3 +71,12 @@ You will need to install [boto](https://github.com/boto/boto).
 
 		AWS_ACCESS_KEY_ID = '<your_aws_key>'
 		AWS_SECRET_ACCESS_KEY = '<your_aws_secret>'
+
+
+# Tests
+
+After you have LogCatcher running, you can test it with:
+
+		python test/localhost/test_logs.py
+		
+You should see logs show up in /mnt/scribe_logs/application1/.

@@ -1,0 +1,2 @@
+sudo example_scripts/kill_scribe_and_python.sh
+sudo example_scripts/start_scribe_and_tornado.sh

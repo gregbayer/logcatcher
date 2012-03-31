@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+
+# Move log files from regular scribe categories to S3
+30 * * * * nohup /usr/bin/python /home/ubuntu/scripts/move_scribe_logs_to_s3.py /mnt/scribe_logs/ <scribe_log_category> <s3_bucket> true >> <your_error_logs_dir>/move_scribe_logs_to_s3.log 2>&1
