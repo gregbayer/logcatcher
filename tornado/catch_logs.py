@@ -22,7 +22,7 @@ import re
 Log Catcher: receives put request and sends them to scribe.
 
 Example endpoint:
-http://<your_server_dns_name_or_ip>/put_logs?category=application1&message=this%20is%20a%20test&hash=RWPzriPjiX202eF3LbCb0xB5zIw=
+http://<your_server_dns_name_or_ip>:8080/put_logs?category=application1&message=this%20is%20a%20test&hash=RWPzriPjiX202eF3LbCb0xB5zIw=
 '''
 
 LOGGING_SHARED_SECRET = "<your logging secret key>"

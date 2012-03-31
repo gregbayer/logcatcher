@@ -80,3 +80,9 @@ After you have LogCatcher running, you can test it with:
 		python test/localhost/test_logs.py
 		
 You should see logs show up in /mnt/scribe_logs/application1/.
+
+
+# Load Balancer (ELB) Config
+
+See Amazon's ELB documentation for complete details. ELB heartbeat requests can be directed at http://<your_server_dns_name_or_ip>:8080/index.html
+ 
