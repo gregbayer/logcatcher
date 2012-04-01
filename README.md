@@ -8,7 +8,7 @@ Once the logs have been written to disk, they can be regularly moved to [Amazon 
 
 By placing a load balancer such as Amazon's Elastic Load Balancer ([ELB](http://aws.amazon.com/elasticloadbalancing/)) in front of several EC2 instances each running an instance of the LogCatcher stack, we are able to easily divide the load over as many servers as necessary. 
 
-Since ELBs support pinging the LogCatcher's built-in heartbeat handler, the load balancer can be easily configured to automatically direct load away from failing machines.Provisioning these machines in multiple AWS availability zones makes achieving fault tolerance just as easy.
+Since ELBs support pinging the LogCatcher's built-in heartbeat handler, the load balancer can be easily configured to automatically direct load away from failing machines. Provisioning these machines in multiple AWS availability zones makes achieving fault tolerance just as easy.
 
 [Pulse](http://www.pulse.me)’s implementation of LogCatcher easily handles millions of events per hour and has been running continuously for over a year without any downtime.
 
