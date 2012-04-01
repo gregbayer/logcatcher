@@ -82,7 +82,7 @@ After you have LogCatcher running, you can test it with:
 You should see logs show up in /mnt/scribe_logs/application1/.
 
 
-# Load Balancer (ELB) Config
+# Load Balancer Config
 
-See Amazon's ELB documentation for complete details. ELB heartbeat requests can be directed at http://<your_server_dns_name_or_ip>:8080/index.html
+See [Amazon's ELB documentation](http://aws.amazon.com/elasticloadbalancing/) for complete details. ELB heartbeat requests can be directed at http://<your_server_dns_name_or_ip>:8080/index.html
  
