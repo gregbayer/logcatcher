@@ -42,22 +42,13 @@ Update the following line in this file if you want to use a different directory.
 
 # Example scripts
 
-Strings to update:
-
-* \<logcatcher dir\>  		---	Ex. /home/ubuntu/logcatcher
-* \<scribe_log_directory\>	---	Ex. /mnt/scribe_logs/
-* \<scribe_log_category\> 	---	Ex. application1
-* \<your_s3_bucket\>		---	Ex. my-amazon-s3-bucket
-* \<your_error_logs_dir\>	---	Ex. /home/ubuntu/logcatcher/logs
-* \<your_aws_key\>			--- Ex. zxcabnfiuafabfkabfjka
-* \<your_aws_secret\>		--- Ex. dvzxc+abnfi+uafabfkasdbfjkavzd
-
 Starting LogCatcher:
 
 * start_scribe_and_tornado.sh  --- if you want to run this script from other locations, consider making the paths absolute.
 
 		nohup scribed -c scribe/scribe.conf >> logs/scribe.log 2>&1 &
 		sudo nohup python tornado/catch_logs.py >> logs/tornado.log 2>&1 &
+
 
 Regularly moving logs to S3:
 
@@ -71,6 +62,19 @@ You will need to install [boto](https://github.com/boto/boto).
 
 		AWS_ACCESS_KEY_ID = '<your_aws_key>'
 		AWS_SECRET_ACCESS_KEY = '<your_aws_secret>'
+
+
+There are a few other basic scripts provided in the example_scripts directory. Hopefully they are self explanitory.
+
+Note: You may need to update some/all of the following strings depending on which example scripts you want to use.
+
+* \<logcatcher dir\>  		---	Ex. /home/ubuntu/logcatcher
+* \<scribe_log_directory\>	---	Ex. /mnt/scribe_logs/
+* \<scribe_log_category\> 	---	Ex. application1
+* \<your_s3_bucket\>		---	Ex. my-amazon-s3-bucket
+* \<your_error_logs_dir\>	---	Ex. /home/ubuntu/logcatcher/logs
+* \<your_aws_key\>			--- Ex. zxcabnfiuafabfkabfjka
+* \<your_aws_secret\>		--- Ex. dvzxc+abnfi+uafabfkasdbfjkavzd
 
 
 # Tests
