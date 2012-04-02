@@ -79,11 +79,11 @@ Note: You may need to update some/all of the following strings depending on whic
 
 # Tests
 
-After you have LogCatcher running, you can test it with:
+After you have LogCatcher running, you can test it by running the included test. You should see logs show up in /mnt/scribe_logs/application1/.
 
 		python test/localhost/test_logs.py
 		
-You should see logs show up in /mnt/scribe_logs/application1/.
+This project could use some more extensive tests. If you write some, please send a pull request!
 
 
 # Load Balancer Config
