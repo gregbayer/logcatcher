@@ -17,8 +17,8 @@ Since ELBs support pinging the LogCatcher's built-in heartbeat handler, the load
 
 Note: The example scripts are designed to be run on an ubuntu EC2 instance and may need to be modified to work in your environment.
 
-1. Provisition a machine on EC2 or elsewhere.
-2. Download & build & install [Scribe](https://github.com/facebook/scribe). You may also need to build/install Scribe dependencies like [Boost](http://www.boost.org/) and and [Thrift](http://thrift.apache.org/download/) and FB303 (included with thrift in contrib/fb303/).
+1. Provision a machine on EC2 or elsewhere.
+2. Download & build & install [Scribe](https://github.com/facebook/scribe). You may also need to build/install Scribe dependencies like [Boost](http://www.boost.org/) and [Thrift](http://thrift.apache.org/download/) and FB303 (included with thrift in contrib/fb303/).
 3. Download & install [Tornado](http://www.tornadoweb.org/)
 4. git clone git@github.com:gregbayer/logcatcher.git; cd logcatcher
 6. See the Config section to setup your scribe log directory.
@@ -84,5 +84,5 @@ You should see logs show up in /mnt/scribe_logs/application1/.
 
 # Load Balancer Config
 
-See [Amazon's ELB documentation](http://aws.amazon.com/elasticloadbalancing/) for complete details. ELB heartbeat requests can be directed at http://<your_server_dns_name_or_ip>:8080/index.html
+See [Amazon's ELB documentation](http://aws.amazon.com/elasticloadbalancing/) for complete details. ELB heartbeat requests can be directed at http://\<your_server_dns_name_or_ip\>:8080/index.html
  
