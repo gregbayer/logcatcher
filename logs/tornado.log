@@ -10,7 +10,3 @@ Traceback (most recent call last):
   File "tornado/catch_logs.py", line 7, in <module>
     from scribe import scribe
 ImportError: No module named scribe
-Sorry, try again.
-Sorry, try again.
-Sorry, try again.
-sudo: 3 incorrect password attempts
